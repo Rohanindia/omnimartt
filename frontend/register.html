@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register - Omni Mart</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  background: linear-gradient(to right, #232F3E, #0F1111);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+.register-container{
+  background:white;
+  width:400px;
+  padding:40px;
+  border-radius:10px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.logo{
+  text-align:center;
+  font-size:22px;
+  font-weight:bold;
+  color:#FF9900;
+  margin-bottom:10px;
+}
+
+.register-container h2{
+  text-align:center;
+  margin-bottom:25px;
+  color:#232F3E;
+}
+
+.input-group{
+  margin-bottom:18px;
+}
+
+.input-group label{
+  font-size:14px;
+  font-weight:bold;
+  display:block;
+  margin-bottom:5px;
+}
+
+.input-group input{
+  width:100%;
+  padding:10px;
+  border:1px solid #ccc;
+  border-radius:5px;
+  font-size:14px;
+  transition:0.3s;
+}
+
+.input-group input:focus{
+  border-color:#FF9900;
+  outline:none;
+  box-shadow:0 0 5px rgba(255,153,0,0.5);
+}
+
+.register-btn{
+  width:100%;
+  padding:12px;
+  background:#FF9900;
+  border:none;
+  color:white;
+  font-size:16px;
+  font-weight:bold;
+  border-radius:5px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.register-btn:hover{
+  background:#e68a00;
+}
+
+.login-link{
+  text-align:center;
+  margin-top:20px;
+  font-size:14px;
+}
+
+.login-link a{
+  color:#232F3E;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+.login-link a:hover{
+  text-decoration:underline;
+}
+
+@media(max-width:480px){
+  .register-container{
+    width:90%;
+    padding:25px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="register-container">
+  <div class="logo">Omni Mart</div>
+  <h2>Create Account</h2>
+
+  <form id="registerForm">
+    <div class="input-group">
+      <label>Full Name</label>
+      <input type="text" name="name" required>
+    </div>
+
+    <div class="input-group">
+      <label>Email</label>
+      <input type="email" name="email" required>
+    </div>
+
+    <div class="input-group">
+      <label>Password</label>
+      <input type="password" name="password" required>
+    </div>
+
+    <button type="submit" class="register-btn">Register</button>
+  </form>
+
+  <div class="login-link">
+    Already have an account? <a href="login.html">Login</a>
+  </div>
+</div>
+
+<script>
+document.getElementById("registerForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    const formData = new FormData(this);
+
+    fetch("../backend/api/register.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(res => res.json())
+    .then(data => {
+        if(data.status === "success"){
+            alert("Registration successful!");
+            window.location.href = "login.html";
+        } else {
+            alert("Registration failed!");
+        }
+    });
+});
+</script>
+
+</body>
+</html>

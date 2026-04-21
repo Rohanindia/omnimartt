@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - Omni Mart</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  background: linear-gradient(to right, #232F3E, #0F1111);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+.login-container{
+  background:white;
+  width:380px;
+  padding:40px;
+  border-radius:10px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+
+.login-container h2{
+  text-align:center;
+  margin-bottom:25px;
+  color:#232F3E;
+}
+
+.input-group{
+  margin-bottom:20px;
+}
+
+.input-group label{
+  font-size:14px;
+  font-weight:bold;
+  display:block;
+  margin-bottom:5px;
+}
+
+.input-group input{
+  width:100%;
+  padding:10px;
+  border:1px solid #ccc;
+  border-radius:5px;
+  font-size:14px;
+}
+
+.input-group input:focus{
+  border-color:#FF9900;
+  outline:none;
+}
+
+.login-btn{
+  width:100%;
+  padding:12px;
+  background:#FF9900;
+  border:none;
+  color:white;
+  font-size:16px;
+  font-weight:bold;
+  border-radius:5px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.login-btn:hover{
+  background:#e68a00;
+}
+
+.register-link{
+  text-align:center;
+  margin-top:20px;
+  font-size:14px;
+}
+
+.register-link a{
+  color:#232F3E;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+.register-link a:hover{
+  text-decoration:underline;
+}
+
+.logo{
+  text-align:center;
+  font-size:22px;
+  font-weight:bold;
+  color:#FF9900;
+  margin-bottom:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="login-container">
+  <div class="logo">Omni Mart</div>
+  <h2>Sign In</h2>
+<form action="../backend/api/login.php" method="POST">
+
+    <div class="input-group">
+      <label>Email</label>
+      <input type="email" name="email" required>
+    </div>
+
+    <div class="input-group">
+      <label>Password</label>
+      <input type="password" name="password" required>
+    </div>
+
+    <button type="submit" class="login-btn">Login</button>
+
+</form>
+
+  <div class="register-link">
+    Don't have an account? <a href="register.html">Register</a>
+  </div>
+</div>
+
+
+
+</body>
+</html>

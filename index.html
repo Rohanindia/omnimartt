@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Omni Mart</title>
+  <link rel="stylesheet" href="css/style.css" />
+ <!-- <script src="js/script.js" defer></script>
+--></head>
+<body>
+
+ <header class="navbar">
+
+  <div class="nav-left">
+    <div class="logo">Omni Mart</div>
+  </div>
+
+  <div class="nav-center">
+    <input type="text" id="searchInput" placeholder="Search for Products, Brands and More">
+  </div>
+
+  <div class="nav-right">
+
+    <div class="login-dropdown">
+      <button class="login-btn">Login</button>
+      <div class="dropdown-content">
+        <p>New Customer?</p>
+        <a href="frontend/register.html">Sign Up</a>
+        <hr>
+        <a href="frontend/login.html">My Profile</a>
+        <a href="#">Orders</a>
+        <a href="#">Wishlist</a>
+      </div>
+    </div>
+
+    <div class="cart-icon" id="cartBtn">
+      🛒 <span id="cartCount">0</span>
+    </div>
+
+  </div>
+
+</header>
+<!--hero section-->
+<section class="hero">
+  <div class="slider">
+      <img src="images/banner1.jpg" class="slide active">
+      <img src="images/banner2.jpg" class="slide">
+      <img src="images/banner3.jpg" class="slide">
+
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+  </div>
+</section>
+
+
+  <!-- PRODUCT GRID -->
+  <section class="products">
+    <h2>Featured Products</h2>
+    <div id="productGrid" class="product-grid"></div>
+  </section>
+
+  <!-- CART SIDEBAR -->
+  <div class="cart-sidebar" id="cartSidebar">
+    <h2>Your Cart</h2>
+    <div id="cartItems"></div>
+    <h3>Total: ₹<span id="cartTotal">0</span></h3>
+    <button class="checkout-btn">Checkout</button>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Omni Mart | Secure Payments</p>
+  </footer>
+
+</body>
+</html>

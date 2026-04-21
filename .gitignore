@@ -1,0 +1,10 @@
+# Database config (keep private)
+backend/config/db.php
+
+# SQL files (optional)
+*.sql
+
+# XAMPP/system files
+.DS_Store
+Thumbs.db
+*.log
